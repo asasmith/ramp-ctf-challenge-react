@@ -23,7 +23,7 @@ export function useFetch(url: string): Response {
         try {
           const response = await fetch(url);
 
-          if (!response.ok) throw new Error("Recieved a non 200 response");
+          if (!response.ok) throw new Error(`Recieved a non 200 response: ${response.status}`);
 
           const data = await response.text();
 
